@@ -59,10 +59,26 @@ const deletePatron = async (req, res) => {
   }
 };
 
+const addDrink = async (req, res) => {
+  const id = req.params.id;
+  const { strDrink, strIngredient1, strMeasure1, dateModified } = req.body;
+  try {
+    const data = await pool.query(
+      queries.addDrink(strDrink, strIngredient1, strMeasure1, dateModified),
+      [id]
+    );
+    res.status(200).send("Drink has been added");
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+};
+
 module.exports = {
   getPatrons,
   getPatronById,
   addPatron,
   deletePatron,
   updatePatron,
+  addDrink,
 };
