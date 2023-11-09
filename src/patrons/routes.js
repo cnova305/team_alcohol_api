@@ -9,5 +9,6 @@ router.post("/addPatron", controller.addPatron);
 router.get("/getPatronById/:id", controller.getPatronById);
 router.put("/:id", controller.updatePatron);
 router.delete("/deletePatronById/:id", controller.deletePatron);
+router.put("/addDrink/:id", controller.addDrink);
 
 module.exports = router;
