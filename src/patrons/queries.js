@@ -9,7 +9,7 @@ const addDrink = (
   strMeasure1,
   dateModified
 ) => `UPDATE patrons
-      SET drinks = array_append(drinks, '{strDrink": "${strDrink}", "strIngredient1": "${strIngredient1}", "strMeasure1": "${strMeasure1}", "dateModified": "${dateModified}"}')
+      SET drinks = array_append(drinks, '{"strDrink": "${strDrink}", "strIngredient1": "${strIngredient1}", "strMeasure1": "${strMeasure1}", "dateModified": "${dateModified}"}')
       WHERE id = $1;`;
 
 module.exports = {
